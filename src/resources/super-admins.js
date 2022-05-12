@@ -1,6 +1,6 @@
 import express from 'express';
 import fs from 'fs';
-import superAdminsList from '../models/super-admins.json';
+import superAdminsList from '../data/super-admins.json';
 
 const router = express.Router();
 

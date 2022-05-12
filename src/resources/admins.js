@@ -1,6 +1,6 @@
 import express from 'express';
 import fs from 'fs';
-import admins from '../models/admins.json';
+import admins from '../data/admins.json';
 
 const router = express.Router();
 

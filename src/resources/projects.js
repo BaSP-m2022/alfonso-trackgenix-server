@@ -1,6 +1,6 @@
 import express from 'express';
 import fs from 'fs';
-import projects from '../models/projects.json';
+import projects from '../data/projects.json';
 
 const router = express.Router();
 

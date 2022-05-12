@@ -1,13 +1,10 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import employees from './controllers/employees';
-import timesheets from './controllers/time-sheets';
-import admins from './controllers/admins';
-import projects from './controllers/projects';
-import tasks from './controllers/tasks';
-import superAdminsRouter from './controllers/super-admins';
-
-mongoose.connect('mongodb+srv://AlfonsoDalix:RadiumRocket@basp-tg.amp3e.mongodb.net/BaSP-TG?retryWrites=true&w=majority');
+import employees from './resources/employees';
+import timesheets from './resources/time-sheets';
+import admins from './resources/admins';
+import projects from './resources/projects';
+import tasks from './resources/tasks';
+import superAdminsRouter from './resources/super-admins';
 
 const app = express();
 const port = process.env.PORT || 3000;

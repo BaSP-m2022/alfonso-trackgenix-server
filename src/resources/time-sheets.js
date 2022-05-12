@@ -1,6 +1,6 @@
 import express from 'express';
 import fs from 'fs';
-import timesheets from '../models/time-sheets.json';
+import timesheets from '../data/time-sheets.json';
 
 const router = express.Router();
 
