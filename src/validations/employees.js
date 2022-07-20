@@ -31,7 +31,7 @@ const creationValidation = (req, res, next) => {
       {
         _id: false,
         projectId: Joi.string().alphanum().length(24).required(),
-        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM').required(),
+        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM', '-').required(),
         rate: Joi.number().precision(2).required(),
         isPM: Joi.boolean().optional().required(),
       },
@@ -75,7 +75,7 @@ const updateValidation = (req, res, next) => {
       {
         _id: false,
         projectId: Joi.string().alphanum().length(24),
-        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM'),
+        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM', '-'),
         rate: Joi.number().precision(2),
         isPM: Joi.boolean().optional(),
       },
