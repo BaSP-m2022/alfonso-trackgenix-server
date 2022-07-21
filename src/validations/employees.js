@@ -95,7 +95,28 @@ const updateValidation = (req, res, next) => {
   return next();
 };
 
+const validateProjectAppend = (req, res, next) => {
+  const associatedProjectsValidation = Joi.object({
+    projectId: Joi.string().alphanum().length(24).required(),
+    role: Joi.string().valid('QA', 'DEV', 'TL', 'PM').required(),
+    rate: Joi.number().precision(2).required(),
+    isPM: Joi.boolean().optional(),
+  });
+
+  const validation = associatedProjectsValidation.validate(req.body);
+
+  if (validation.error) {
+    return res.status(400).json({
+      message: 'There has been an error in the validation',
+      data: validation.error.details[0].message,
+      error: true,
+    });
+  }
+  return next();
+};
+
 export default {
   creationValidation,
   updateValidation,
+  validateProjectAppend,
 };

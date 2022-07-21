@@ -1,7 +1,10 @@
-const firebase = require('../helper/firebase');
+import firebase from '../helper/firebase';
 
 const authMiddleware = (req, res, next) => {
   const { token } = req.headers;
+  if (req.path === '/register') {
+    next();
+  }
   if (!token) {
     return res.status(400).json({ message: 'Authentication failed' });
   }

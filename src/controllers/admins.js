@@ -5,11 +5,10 @@ const Firebase = require('../helper/firebase');
 const getAllAdmins = async (req, res) => {
   try {
     const {
-      email, active,
+      email,
     } = req.query;
     const admins = await Admins.find({
       email: { $regex: new RegExp(email || '', 'i') },
-      active: active ?? { $in: [false, true] },
       isDeleted: { $ne: true },
     });
     if (admins.length < 1) {

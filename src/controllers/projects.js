@@ -85,7 +85,7 @@ const pushEmployee = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Project successfully updated',
       data: result,
       error: false,
     });
@@ -124,7 +124,7 @@ const pushTask = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Project successfully updated',
       data: result,
       error: false,
     });
@@ -148,7 +148,6 @@ const updatePushedemployee = async (req, res) => {
       });
     }
 
-    // here goes result
     const result = await Project
       .updateOne({ _id: id, 'team.employeeId': req.body.employeeId }, { $set: { 'team.$': req.body } }, { new: true })
       .populate('team.employeeId', { firstName: 1, lastName: 1 })
@@ -228,7 +227,7 @@ const updateProject = async (req, res) => {
       });
     }
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Project successfully updated',
       data: result,
       error: false,
     });
@@ -268,7 +267,7 @@ const pullEmployee = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Project successfully updated',
       data: result,
       error: false,
     });
@@ -308,7 +307,7 @@ const pullTask = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Project successfully updated',
       data: result,
       error: false,
     });
