@@ -11,7 +11,7 @@ const validateCreation = (req, res, next) => {
     team: Joi.array().items(
       {
         employeeId: Joi.string().alphanum().length(24).required(),
-        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM').required(),
+        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM', '-').required(),
         rate: Joi.number().precision(2).required(),
         isPM: Joi.boolean().optional(),
       },
@@ -42,7 +42,7 @@ const validateModification = (req, res, next) => {
     team: Joi.array().items(
       {
         employeeId: Joi.string().alphanum().length(24),
-        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM'),
+        role: Joi.string().valid('QA', 'DEV', 'TL', 'PM', '-'),
         rate: Joi.number().precision(2),
         isPM: Joi.boolean().optional(),
       },
@@ -66,7 +66,7 @@ const validateModification = (req, res, next) => {
 const validateTeamAppend = (req, res, next) => {
   const teamMemberValidation = Joi.object({
     employeeId: Joi.string().alphanum().length(24).required(),
-    role: Joi.string().valid('QA', 'DEV', 'TL', 'PM').required(),
+    role: Joi.string().valid('QA', 'DEV', 'TL', 'PM', '-').required(),
     rate: Joi.number().precision(2).required(),
     isPM: Joi.boolean().optional(),
   });
