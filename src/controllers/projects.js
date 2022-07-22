@@ -85,7 +85,7 @@ const pushEmployee = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'The employee was added successfully',
       data: result,
       error: false,
     });
@@ -124,7 +124,7 @@ const pushTask = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'The task was added successfully',
       data: result,
       error: false,
     });
@@ -163,7 +163,7 @@ const updatePushedemployee = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project successully updated',
+      message: 'The employee was successfully updated',
       data: result,
       error: false,
     });
@@ -268,7 +268,7 @@ const pullEmployee = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Employee succesfully updated',
       data: result,
       error: false,
     });
@@ -308,7 +308,7 @@ const pullTask = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: 'Project succesfully updated',
+      message: 'Task succesfully updated',
       data: result,
       error: false,
     });
